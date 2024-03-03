@@ -1,7 +1,7 @@
 import express from "express";
 import { appController } from "../controller/AppController";
 
-class AppRoutes {
+class UserRoutes {
     public express: express.Application;
 
     constructor() {
@@ -17,5 +17,5 @@ class AppRoutes {
     }
 }
 
-const appRoutes = new AppRoutes().express;
-export { appRoutes };
+const userRoutes = new UserRoutes().express;
+export { userRoutes };

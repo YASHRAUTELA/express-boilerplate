@@ -1,6 +1,6 @@
-import express, { Request, Response } from "express";
-import { appRoutes } from "./routes/appRoutes";
 import bodyParser from "body-parser";
+import express, { Request, Response } from "express";
+import { userRoutes } from "./routes/userRoutes";
 
 class App {
     public express: express.Application;
@@ -14,7 +14,7 @@ class App {
         this.express.get("/", (request: Request, response: Response) => {
             response.json({ data: "Success!" });
         });
-        this.express.use("/user", appRoutes);
+        this.express.use("/user", userRoutes);
     }
 
     private config() {
