@@ -1,5 +1,6 @@
 import mysql, { RowDataPacket } from "mysql2/promise";
 import { CustomError } from "./error";
+require("dotenv").config();
 
 interface MySqlErrorType {
     code: string;
@@ -14,6 +15,7 @@ const db = mysql.createPool({
     user: process.env.DB_USER || "root",
     password: process.env.DB_PASSWORD || "12345678",
     database: process.env.DB_NAME || "scrumbooster_new",
+    port: Number(process.env.DB_PORT) || 3306,
 });
 
 export const query = (sql: string, values?: any | any[] | { [param: string]: any }) =>
