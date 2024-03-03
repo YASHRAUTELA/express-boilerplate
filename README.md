@@ -21,6 +21,3 @@ For Automatically fixing code in VS Code Editor:
         "source.organizeImports": true,
     }
 ```
-
-### Other Links :
-- MySQL Connectivity [🔗](https://github.com/YASHRAUTELA/express-ts-eslint/tree/mysql)
