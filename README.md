@@ -1,5 +1,8 @@
-# express-ts-eslint 
-Express JS Boilerplate with Typescript & Eslint configured.
+# express-ts-eslint
+Express JS Boilerplate with Typescript & Eslint & MySQL connectivity.
+
+# Supported Node Version
+v20.11.1 or later
 
 ### Editor Configuration : [🔗](https://code.visualstudio.com/docs/languages/typescript#_code-actions-on-save)
 

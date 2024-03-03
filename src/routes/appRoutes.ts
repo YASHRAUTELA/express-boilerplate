@@ -10,7 +10,10 @@ class AppRoutes {
     }
 
     private routes() {
-        this.express.get("/", appController.getData);
+        this.express.get("/", appController.fetch);
+        this.express.post("/", appController.insert);
+        this.express.put("/", appController.update);
+        this.express.delete("/", appController.delete);
     }
 }
 
