@@ -1,5 +1,11 @@
-# express-ts-eslint
-Express JS Boilerplate with Typescript & Eslint & MySQL connectivity.
+# express-boilerplate
+Node JS Boilerplate with below integrations:
+- Express JS
+- Typescript
+- ESLint, Prettier & EditorConfig for auto code formatting.
+- MySQL
+- Redis
+- CRUD
 
 # Supported Node Version
 v20.11.1 or later
