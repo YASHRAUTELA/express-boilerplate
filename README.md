@@ -12,7 +12,7 @@ v20.11.1 or later
 
 ### Editor Configuration : [🔗](https://code.visualstudio.com/docs/languages/typescript#_code-actions-on-save)
 
-Install following extensions (for VS Code):
+Install following `VSCode Editor` extensions:
 - EditorConfig
 - ESLint
 - Prettier
