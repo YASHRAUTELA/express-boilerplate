@@ -1,6 +1,6 @@
 import bodyParser from "body-parser";
 import express, { Request, Response } from "express";
-import client from "./config/redis";
+import redisClient from "./config/redis";
 import { userRoutes } from "./routes/userRoutes";
 
 class App {
@@ -20,7 +20,7 @@ class App {
 
     private config() {
         this.express.use(bodyParser.json());
-        client.connect();
+        redisClient.connect();
     }
 }
 

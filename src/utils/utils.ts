@@ -24,7 +24,7 @@ const formattedResponse = (status: number, data?: any, message?: string, error?:
 
 const handleErrorResponse = (response: Response, error: any) => {
     if (error instanceof Error) {
-        throw new CustomError(error.message, 500, error.stack);
+        throw new CustomError(error.message, 500, {}, error.stack);
     }
     response.statusCode = error.code || 500;
     response.json(error);
