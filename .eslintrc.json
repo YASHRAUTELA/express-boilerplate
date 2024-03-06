@@ -24,5 +24,6 @@
                 "printWidth": 100
             }
         ]
-    }
+    },
+    "ignorePatterns": [".dockeringore"]
 }
