@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
 import redisClient from "../config/redis";
-import { addUser, deleteUser, fetchUsers, updateUser } from "../services/users";
+import { deleteUser, fetchUsers, saveUserFiles, updateUser } from "../services/users";
 import { formattedResponse, handleErrorResponse } from "../utils/utils";
 
 class AppController {
@@ -28,10 +28,17 @@ class AppController {
 
     async insert(request: Request, response: Response) {
         try {
-            const { name, email } = request.body;
-            const data = await addUser(name, email);
-            const user = await fetchUsers(data.insertId);
-            response.json(formattedResponse(200, user[0], "User data added successfully"));
+            const file = request.file;
+
+            if (file) {
+                const responseData = await saveUserFiles(
+                    `/${file?.destination + file.filename}`,
+                    file.filename,
+                );
+                response.json(formattedResponse(200, responseData, "File saved successfully"));
+                return;
+            }
+            response.json(formattedResponse(200, {}, "User data added successfully"));
         } catch (error: any) {
             handleErrorResponse(response, error);
         }

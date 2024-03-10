@@ -17,3 +17,7 @@ export const updateUser = async (name: string, id: number) => {
 export const deleteUser = async (id: number) => {
     return await query("DELETE FROM users WHERE user_id=?", [id]);
 };
+
+export const saveUserFiles = async (fileName: string, filePath: string) => {
+    return await query("INSERT INTO files(file_name, file_path) VALUES(?,?)", [fileName, filePath]);
+};

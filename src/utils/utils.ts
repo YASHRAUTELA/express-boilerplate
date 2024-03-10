@@ -1,5 +1,6 @@
 import { Response } from "express";
 import { CustomError } from "../config/error";
+const multer = require("multer");
 
 interface ResponseType {
     status: string;
@@ -30,4 +31,16 @@ const handleErrorResponse = (response: Response, error: any) => {
     response.json(error);
 };
 
-export { ResponseType, formattedResponse, handleErrorResponse, isStatusOk };
+const storage = multer.diskStorage({
+    destination: function (req: any, file: any, cb: any) {
+        cb(null, "uploads/");
+    },
+    filename: function (req: any, file: any, cb: any) {
+        const uniqueSuffix = Date.now() + "-" + file.originalname;
+        cb(null, uniqueSuffix);
+    },
+});
+
+const upload = multer({ storage });
+
+export { ResponseType, formattedResponse, handleErrorResponse, isStatusOk, upload };

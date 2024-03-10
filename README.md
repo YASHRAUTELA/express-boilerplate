@@ -6,6 +6,7 @@ Node JS Boilerplate with below integrations:
 - MySQL
 - Redis
 - CRUD
+- File Upload
 
 # Supported Node Version
 v20.11.1 or later
