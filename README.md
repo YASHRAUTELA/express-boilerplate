@@ -7,6 +7,7 @@ Node JS Boilerplate with below integrations:
 - Redis
 - CRUD
 - File Upload
+- Docker Configuration
 
 # Supported Node Version
 v20.11.1 or later
